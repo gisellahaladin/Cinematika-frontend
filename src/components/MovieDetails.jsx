@@ -22,11 +22,11 @@ const MovieDetails = () => {
         .catch(e => console.log(e));
     };
     return (
-        <div className='content-center justify-center w-full grid place-items-center mt-1 mb-5 p-5'>
+        <div className='content-center justify-center w-full grid place-items-center mt-1 mb-5 p-5 font-primary'>
         {error && <p style={{ color: 'red' }}>{error}</p>}
         {movie && (
             <>
-            <h2 className='text-3xl text-left text-white font-extrabold mb-5'>{movie.title}</h2>
+            <h2 className='text-3xl text-left text-white font-semibold mb-5'>{movie.title}</h2>
             <div className='bg-black p-4 border-white border-2'>
             <img className='max-h-96' src={movie.poster} alt='' />
             </div>
@@ -37,10 +37,10 @@ const MovieDetails = () => {
             <p className='text-lg text-white text-center'>Rating: {movie.rating}/5</p>
             </div>
             <div>
-                <button className='text-lg rounded-sm text-white bg-indigo-950 border-2 border-pink-400'>
+                <button className='text-lg text-white bg-slate-950 border-2 border-white m-4 p-2 font-primary hover:border-blue-300'>
             <Link to={`/movies/${id}/update`}>Update Movie</Link>
             </button>
-            <button className='text-lg rounded-sm text-white bg-indigo-950 border-2 border-pink-400' onClick={handleDelete}>Delete Movie</button>
+            <button className='text-lg text-white  bg-slate-950 border-2 border-white m-4 p-2 hover:border-blue-300' onClick={handleDelete}>Delete Movie</button>
             </div>
             </>
         )}

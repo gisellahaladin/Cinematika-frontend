@@ -20,17 +20,17 @@ const NewMovie = () => {
         // let defaultImage = ""
         // {image: image || defaultImage}      
 
-        // const newMovie = {
-        //     title,
-        //     director,
-        //     year,
-        //     rating,
-        //     genre,
-        //     poster
-        // };        
+        const newMovie = {
+            title,
+            director,
+            year,
+            rating,
+            genre,
+            poster: newFilm,
+        };        
 
         axios
-        .post(`${import.meta.env.VITE_SERVER_BASE_URL}/api/movies`, { title, director, year, rating, genre, newFilm })
+        .post(`${import.meta.env.VITE_SERVER_BASE_URL}/api/movies`, newMovie)
         .then(res => {
             console.log(res.data);
             navigate('/');
@@ -38,26 +38,27 @@ const NewMovie = () => {
         .catch(e => console.log(e));
     };
     return (
-        <div className='grid place-items-center mt-1 mb-5 p-5 content-center justify-center'>
+        <div className='grid place-items-center mt-1 mb-5 p-5 content-center justify-center font-primary'>
             <div>
-            <img className='contrast-200' src={filmStrip} alt="" />
+            <img className='contrast-200 h-20 mb-4' src={filmStrip} alt="" />
             </div>
-        <h2>Add a New Movie</h2>
-        <form className='p-2 flex flex-col w-3/4 text-lg text-white text-center' onSubmit={handleSubmit}>
-            <label htmlFor="">Title</label>
+        <h2 className='text-3xl text-left text-white font-primary font-bold mb-2 mt-2'>Add a New Movie</h2>
+        <form className='p-2 flex flex-col w-96 text-lg text-white text-center' onSubmit={handleSubmit}>
+            <label className='m-2' htmlFor="">Title</label>
             <input className='text-black' type="text" name="title" value={title}
             onChange={e => setTitle(e.target.value)}
             required
             />
-            <label htmlFor="">Director</label>
+            <label className='m-2' htmlFor="">Director</label>
             <input className='text-black' type="text" name="director" value={director} onChange={e => setDirector(e.target.value)} />
-            <label htmlFor="">Year</label>
+            <label className='m-2' htmlFor="">Year</label>
             <input className='text-black' type="text" name="year" value={year} onChange={e => setYear(e.target.value)} />
-            <label htmlFor="">Rating</label>
+            <label className='m-2' htmlFor="">Rating</label>
             <input className='text-black' type="text" name="rating" value={rating} onChange={e => setRating(e.target.value)} />
-            <label htmlFor="">Genre</label>
+            <label className='m-2' htmlFor="">Genre</label>
             <input className='text-black' type="text" name="genre" value={genre} onChange={e => setGenre(e.target.value)} />
-            <button>Submit</button>
+            <div className='text-center mt-2'><button className='text-lg text-white  bg-slate-950 border-2 border-white m-4 p-2 w-48 text-center justify-center align-middle hover:border-blue-300'>Submit</button>
+            </div>
         </form>
         </div>
     );

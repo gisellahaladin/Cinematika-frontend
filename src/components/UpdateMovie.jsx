@@ -32,38 +32,39 @@ const UpdateMovie = () => {
         // setState(updatedBook)
     };
     return (
-        <div>
-        <h2>Update Movie</h2>
-        <form className='p-2 flex flex-col' onSubmit={handleSubmit}>
-            <label htmlFor="">Title</label>
-            <input
+        <div className='grid place-items-center mt-1 mb-5 p-5 content-center justify-center font-primary'>
+        <h2  className='text-3xl text-center text-white font-semibold font-primary mb-5 mt-2'>Update Movie</h2>
+        <img src="" alt="" />
+        <form className='p-2 flex flex-col content-center justify-center w-96' onSubmit={handleSubmit}>
+            <label className='text-lg text-white text-center mt-2 p-1' htmlFor="">Title</label>
+            <input className='p-1'
             type="text"
             name="title"
             value={movie?.title || ''}
             onChange={handleChange}
             required
             />
-            <label htmlFor="">Director</label>
-            <input 
+            <label className='text-lg text-white text-center mt-2 p-1' htmlFor="">Director</label>
+            <input className='p-1' 
             type="text"
             name="director" 
             value={movie?.director || ''} onChange={handleChange} />
-            <label htmlFor="">Year</label>
-            <input 
+            <label className='text-lg text-white text-center mt-2 p-1' htmlFor="">Year</label>
+            <input className='p-1' 
             type="text"
             name="year" 
             value={movie?.year || ''} onChange={handleChange} />
-            <label htmlFor="">Rating</label>
-            <input 
+            <label className='text-lg text-white text-center mt-2 p-1' htmlFor="">Rating</label>
+            <input className='p-1' 
             type="text" 
             name="rating" 
             value={movie?.rating || ''} onChange={handleChange} />
-            <label htmlFor="">Genre</label>
-            <input 
+            <label className='text-lg text-white text-center mt-2 p-1' htmlFor="">Genre</label>
+            <input className='p-1' 
             type="text" 
             name="genre" 
             value={movie?.genre || ''} onChange={handleChange} />
-            <button>Update Movie</button>
+            <button className='text-lg text-white bg-slate-950 border-2 border-white m-4 p-2 font-primary mt-8 hover:border-blue-300'>Update Movie</button>
         </form>
         <div className='h-96'></div>
         </div>

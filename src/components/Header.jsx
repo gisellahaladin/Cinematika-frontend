@@ -30,17 +30,17 @@ const Header = () => {
     return (
         <header>
             
-            <nav className='bg-neutral-950 h-14'>
-                <ul className='flex flex-row align-right justify-end space-x-8 text-xl text-white p-4'>
-                    <li className='hover:text-transparent bg-clip-text bg-gradient-to-br from-pink-400 to-red-600 transition duration-350 ease-in-out'>
+            <nav className='bg-neutral-950 h-16 mb-1'>
+                <ul className='flex flex-row align-right justify-end space-x-8 text-xl text-white p-6 font-primary'>
+                    <li className='hover:text-transparent bg-clip-text bg-gradient-to-br from-pink-300 via-blue-300 to-red-600 transition duration-350 ease-in-out'>
                         <NavLink to="/">{'// HOME //'}</NavLink>
                     </li>
-                    <li className='hover:text-transparent bg-clip-text bg-gradient-to-br from-pink-400 to-red-600 transition duration-350 ease-in-out'>
+                    <li className='hover:text-transparent bg-clip-text bg-gradient-to-br from-pink-300 via-blue-300 to-red-600 transition duration-350 ease-in-out'>
                         <NavLink to="/movies/new">{'// ADD A NEW MOVIE //'}</NavLink>
                     </li>
                 </ul>
             </nav>
-            <div className="h-full flex justify-center items-center">
+            <div className="h-full flex justify-center items-center p-2">
         <h1 className="text-white text-9xl font-extrabold uppercase relative inline-block">
             <span id="before-te1" className="absolute top-0 left-0.5 w-full h-full bg-transparent" style={{ textShadow: "-2px 0 #49FC00", clipPath: "rect(24px, 550px, 90px, 0)" }} aria-hidden="true">CINEMATIKA</span> {/* glitch::before */}
             CINEMATIKA
